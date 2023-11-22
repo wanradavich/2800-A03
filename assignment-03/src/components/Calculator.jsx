@@ -67,9 +67,16 @@ const Calculator = () => {
     return (
         <div className="calculator">
             <Display input={input} result={result} />
-            {calculatorButtons.map((button) => (
-                <Button key={button.className} label={button.text} onClick={() => handleButtonClick(button.value)} />
-            ))}
+            <div className="button-grid">
+                {calculatorButtons.map((button) => (
+                    <Button
+                        key={button.className}
+                        label={button.text}
+                        onClick={() => handleButtonClick(button.value)}
+                        style={button.style}
+                    />
+                ))}
+            </div>
         </div>
     );
 };
